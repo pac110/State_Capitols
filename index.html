@@ -27,7 +27,6 @@
 
     .mapboxgl-popup {
       padding-bottom: 5px;
-    }
 
     .mapboxgl-popup-close-button {
       display: none;
@@ -104,7 +103,7 @@
       $.ajax({
         type: "GET",
         //YOUR TURN: Replace with csv export link
-        url: 'https://docs.google.com/spreadsheets/d/1iKqAePEqZRkhf2ngtG4_SsWai9P_kNEz2l41X70j3yw/gviz/tq?tqx=out:csv&sheet=DC_Ward2',
+        url: 'https://docs.google.com/spreadsheets/d/1iKqAePEqZRkhf2ngtG4_SsWai9P_kNEz2l41X70j3yw/gviz/tq?tqx=out:csv&sheet=DCWard2',
         dataType: "text",
         success: function (csvData) { makeGeoJSON(csvData); }
       });
