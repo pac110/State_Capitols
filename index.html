@@ -27,6 +27,7 @@
 
     .mapboxgl-popup {
       padding-bottom: 5px;
+    }
 
     .mapboxgl-popup-close-button {
       display: none;
@@ -90,11 +91,11 @@
       };
     };
     //YOUR TURN: add your Mapbox token 
-    mapboxgl.accessToken = '<pk.eyJ1IjoicGFjMTEwIiwiYSI6ImNraDJlbW5hMjAxNzYyc25hdGNoMWVzcHgifQ.qoPigNMAAfJ8eeiMumMNyQ>'; //Mapbox token 
+    mapboxgl.accessToken = 'pk.eyJ1IjoicGFjMTEwIiwiYSI6ImNraDJlbW5hMjAxNzYyc25hdGNoMWVzcHgifQ.qoPigNMAAfJ8eeiMumMNyQ'; //Mapbox token 
     var map = new mapboxgl.Map({
       container: 'map', // container id
       style: 'mapbox://styles/mapbox/streets-v11', //stylesheet location
-      center: [-77.0504408, 38.9012145], // starting position
+      center: [-122.411464, 37.7852299], // starting position
       zoom: 9,// starting zoom
       transformRequest: transformRequest
     });
@@ -103,7 +104,7 @@
       $.ajax({
         type: "GET",
         //YOUR TURN: Replace with csv export link
-        url: '<https://docs.google.com/spreadsheets/d/1iKqAePEqZRkhf2ngtG4_SsWai9P_kNEz2l41X70j3yw/gviz/tq?tqx=out:csv&sheet=DCWard2>',
+        url: 'https://docs.google.com/spreadsheets/d/1iKqAePEqZRkhf2ngtG4_SsWai9P_kNEz2l41X70j3yw/gviz/tq?tqx=out:csv&sheet=DCWard2',
         dataType: "text",
         success: function (csvData) { makeGeoJSON(csvData); }
       });
@@ -146,7 +147,7 @@
               // Ensure that if the map is zoomed out such that multiple
               // copies of the feature are visible, the popup appears
               // over the copy being pointed to.
-lngLat.lng - coordinates[0]) > 180) {
+              while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
                 coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
               }
 
