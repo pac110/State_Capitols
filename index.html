@@ -95,8 +95,8 @@
     var map = new mapboxgl.Map({
       container: 'map', // container id
       style: 'mapbox://styles/mapbox/streets-v11', //stylesheet location
-      center: [-77.4, 38.0], // starting position
-      zoom: 10,// starting zoom
+      center: [-77.04, 38.9], // starting position
+      zoom: 9,// starting zoom
       transformRequest: transformRequest
     });
 
@@ -147,7 +147,7 @@
               // Ensure that if the map is zoomed out such that multiple
               // copies of the feature are visible, the popup appears
               // over the copy being pointed to.
-              while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+lngLat.lng - coordinates[0]) > 180) {
                 coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
               }
 
